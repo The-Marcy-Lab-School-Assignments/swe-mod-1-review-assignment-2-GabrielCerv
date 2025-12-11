@@ -15,7 +15,7 @@ Read the following code:
 
 ```js
 const playlist1 = { name: "My Favorites", songCount: 10 };
-const playlist2 = playlist1;
+const playlist2 = playlist1; 
 playlist2.songCount = 15;
 console.log(playlist1.songCount);
 ```
@@ -28,12 +28,16 @@ Part B: How would you modify the code so that reassigning `playlist2.songCount` 
 
 Your response...
 
+The console will log "15" because playlist2 is set to equal to the same object in memory when writing: playlist2 = playlist1
+
+once we use the dot notation playlist2.songCount = 15 it sets the songCount to a new value of 15.
+
 **Corrected Code:**
 
 ```js
 // fix this!
 const playlist1 = { name: "My Favorites", songCount: 10 };
-const playlist2 = playlist1;
+const playlist2 = {...playlist1}; // make a copy using the spread operator
 playlist2.songCount = 15;
 console.log(playlist1.songCount);
 ```
@@ -61,8 +65,12 @@ For each task below, identify which array method (forEach, filter, map, find, or
 ### Response 2
 
 Your response...
+--- 
+1. filter()
+2. find()
+3. reduce()
+4. map()
 
----
 
 ## Prompt 3
 
@@ -85,6 +93,7 @@ console.log(upperCaseLetters);
 Your response...
 
 ---
+When using a method like .map() you want to have a callback function for the .map() value, also capitalize() runs without an argument and it does not receive an argument at all because the capitalize function is the callback function.
 
 ## Prompt 4
 
@@ -112,3 +121,16 @@ const grandTotal = orders.reduce((sum, order) => {
 ### Response 4
 
 Your response...
+
+45 + 23 + 67 = 135 
+
+the grandTotal will be 135 after the code runs
+
+The 0 at the end of the reduce method sets the starting value (Initial value). This values ensures that the reduce method will work even if the array is empty 
+
+The returned value:
+
+```js 
+ 45
+```
+
